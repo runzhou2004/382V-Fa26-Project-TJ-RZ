@@ -1,0 +1,18 @@
+{
+  "pair_id": "Accenture__mercury__pr143__PostOfficeTest.journalYamlTest",
+  "project": "https://github.com/Accenture/mercury",
+  "category": "ID",
+  "pr_link": "https://github.com/Accenture/mercury/pull/143",
+  "pre_sha": "e659caf000c2a714d921a52cbc85e13f56cef981",
+  "post_sha": "291ddb2352d0991247377fa80c665b87fb108031",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "PostOfficeTest",
+  "test_method": "journalYamlTest",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 429,
+  "post_chars": 429
+}

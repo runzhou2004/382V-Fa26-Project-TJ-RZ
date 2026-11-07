@@ -1,0 +1,18 @@
+{
+  "pair_id": "abel533__Mapper__pr940__TkMapperServiceTest.byId",
+  "project": "https://github.com/abel533/Mapper",
+  "category": "ID",
+  "pr_link": "https://github.com/abel533/Mapper/pull/940",
+  "pre_sha": "7990b9c48bbcebf590f09fc245daba0c396f7b57",
+  "post_sha": "080ee59d0ac6f97b858a44e8decf59ce76a383d5",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "TkMapperServiceTest",
+  "test_method": "byId",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 152,
+  "post_chars": 158
+}

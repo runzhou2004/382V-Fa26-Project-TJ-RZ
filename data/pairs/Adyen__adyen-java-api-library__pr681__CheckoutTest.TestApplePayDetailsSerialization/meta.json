@@ -1,0 +1,18 @@
+{
+  "pair_id": "Adyen__adyen-java-api-library__pr681__CheckoutTest.TestApplePayDetailsSerialization",
+  "project": "https://github.com/Adyen/adyen-java-api-library",
+  "category": "ID",
+  "pr_link": "https://github.com/Adyen/adyen-java-api-library/pull/681",
+  "pre_sha": "b8a8de526a271b4929547103a198ad5d1b1c528d",
+  "post_sha": "2a22815196aa9cf02cdb30239f758e35775f6540",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "CheckoutTest",
+  "test_method": "TestApplePayDetailsSerialization",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 1090,
+  "post_chars": 1110
+}

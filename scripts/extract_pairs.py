@@ -65,6 +65,9 @@ except RateLimited as e:
  
 idx = pd.DataFrame(index)
 idx.to_csv(ROOT / "data/interim/pairs_index.csv", index=False)
+if idx.empty:
+    print("No rows to process. resolved_candidates.csv has no rows with resolve_note == 'ok'.")
+    sys.exit(0)
 print(idx["reason"].value_counts().to_string())
 if len(idx):
     print("\nusable pairs per category:")

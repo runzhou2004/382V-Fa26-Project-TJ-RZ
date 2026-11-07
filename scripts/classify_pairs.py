@@ -1,103 +1,185 @@
 import argparse
 import json
 import sys
+import textwrap
 from pathlib import Path
  
 import numpy as np
 import pandas as pd
  
 ROOT = Path(__file__).resolve().parent.parent
+BASE_MODEL = "microsoft/codebert-base"
+N_CLASSES = 6
+NONFLAKY = 5          # class id of "not flaky" (the authors treat category 5 as non-flaky)
+MAX_LEN = 512
+GROUPS = (1, 2, 3, 4)
  
  
 # --------------------------------------------------------------------------
-# Model loading / inference  (needs torch + transformers; imported lazily)
+# Model wrapper (needs torch / transformers / the authors' codebert_model.py)
 # --------------------------------------------------------------------------
-def load_model(model_path, base_model, num_labels, device):
-    import torch
-    from transformers import AutoModelForSequenceClassification, AutoTokenizer
+class Scorer:
+    def __init__(self, src_dir, models_dir, pattern, device):
+        import torch
+        from transformers import AutoConfig, AutoModel, AutoTokenizer
  
-    p = Path(model_path)
-    if p.is_dir():
-        if not (p / "config.json").exists():
-            sys.exit(f"{p} is a directory but has no config.json. Point --model at the folder "
-                     "that contains config.json, or at a .pt/.bin file.")
-        has_tok = any((p / f).exists() for f in ("tokenizer.json", "vocab.json", "tokenizer_config.json"))
-        tok = AutoTokenizer.from_pretrained(p if has_tok else base_model)
-        model = AutoModelForSequenceClassification.from_pretrained(p)
-    else:
+        sys.path.insert(0, str(src_dir))
         try:
-            obj = torch.load(p, map_location="cpu", weights_only=True)
-        except Exception:
-            print("note: weights_only load failed; loading as a full pickle "
-                  "(only do this for the authors' released artifact)", file=sys.stderr)
-            obj = torch.load(p, map_location="cpu", weights_only=False)
-        tok = AutoTokenizer.from_pretrained(base_model)
-        if isinstance(obj, torch.nn.Module):
-            model = obj
-        else:
-            sd = obj
-            for k in ("model_state_dict", "state_dict", "model"):
-                if isinstance(sd, dict) and isinstance(sd.get(k), dict):
-                    sd = sd[k]
-            sd = {k.removeprefix("module."): v for k, v in sd.items()}
-            model = AutoModelForSequenceClassification.from_pretrained(base_model, num_labels=num_labels)
-            res = model.load_state_dict(sd, strict=False)
-            bad = [k for k in list(res.missing_keys) + list(res.unexpected_keys) if "position_ids" not in k]
-            if bad:
-                sys.exit("The checkpoint's weights do not match RobertaForSequenceClassification "
-                         f"(first mismatches: {bad[:6]}).\nThe authors probably use a custom classification "
-                         "head. Open the FlakyLens src/ file that builds the model and adapt load_model().")
-    model.to(device).eval()
-    return tok, model
+            from codebert_model import BERT_Arch   # the authors' own class
+        except ImportError as e:
+            sys.exit(f"Could not import codebert_model from {src_dir}: {e}\n"
+                     "Use --src-dir to point at the folder containing codebert_model.py.")
+        self.torch = torch
+        self.device = device
+        self.models_dir, self.pattern, self.loaded = Path(models_dir), pattern, None
+        # same construction as utils.codebert_model_define()
+        cfg = AutoConfig.from_pretrained(BASE_MODEL, return_dict=False, output_hidden_states=True)
+        self.tok = AutoTokenizer.from_pretrained(BASE_MODEL)
+        self.model = BERT_Arch(AutoModel.from_pretrained(BASE_MODEL, config=cfg), N_CLASSES)
+        self.model.to(device).eval()
  
+    def encode(self, texts):
+        enc = self.tok(texts, max_length=MAX_LEN, padding="max_length", truncation=True)
+        n_tok = np.array([len(self.tok.tokenize(t)) + 2 for t in texts])  # untruncated length
+        return enc["input_ids"], enc["attention_mask"], n_tok
  
-def predict(texts, tok, model, device, max_len, batch_size=8):
-    """Return (probs [n, n_classes], n_tokens [n]) for a list of code strings."""
-    import torch
+    def _use(self, k):
+        if self.loaded == k:
+            return
+        path = self.models_dir / self.pattern.format(k=k)
+        if not path.exists():
+            sys.exit(f"missing checkpoint: {path}")
+        self.model.load_state_dict(self.torch.load(path, map_location=self.device))
+        self.model.eval()
+        self.loaded = k
  
-    probs, ntok = [], []
-    with torch.no_grad():
-        for i in range(0, len(texts), batch_size):
-            chunk = texts[i:i + batch_size]
-            enc = tok(chunk, truncation=True, max_length=max_len, padding=True, return_tensors="pt")
-            logits = model(**{k: v.to(device) for k, v in enc.items()}).logits
-            probs.append(torch.softmax(logits, dim=-1).cpu().numpy())
-            ntok += [len(tok.tokenize(t)) + 2 for t in chunk]  # +2: <s>, </s>  (untruncated length)
-    return np.concatenate(probs), np.array(ntok)
+    def score(self, k, ids, mask, batch_size=8):
+        """Probabilities [n, 6] from the group-k model."""
+        torch = self.torch
+        self._use(k)
+        out = []
+        with torch.no_grad():
+            for i in range(0, len(ids), batch_size):
+                s = torch.tensor(ids[i:i + batch_size]).long().to(self.device)
+                m = torch.tensor(mask[i:i + batch_size]).long().to(self.device)
+                out.append(torch.exp(self.model(s, m)).cpu().numpy())   # model returns LogSoftmax
+        return np.concatenate(out) if out else np.zeros((0, N_CLASSES))
  
  
 # --------------------------------------------------------------------------
-# Pure-pandas parts (no torch needed)
+# Data helpers (pure pandas)
 # --------------------------------------------------------------------------
 def squash(s):
     return " ".join(str(s).split())
  
  
-def label_names(flakylens_csv, n_classes):
-    names = {i: f"class_{i}" for i in range(n_classes)}
-    if flakylens_csv:
-        d = pd.read_csv(flakylens_csv, usecols=["label", "category"]).drop_duplicates()
-        names.update({int(r.label): str(r.category) for r in d.itertuples()})
+def project_key(url_or_name):
+    """'https://github.com/apache/hadoop' -> 'apache_hadoop' (FlakyLens naming), lowercased."""
+    s = str(url_or_name).strip().rstrip("/")
+    if "github.com/" in s:
+        owner, repo = s.split("github.com/")[1].split("/")[:2]
+        s = f"{owner}_{repo}"
+    return s.lower()
+ 
+ 
+def class_columns(df):
+    """In the FlakyLens CSVs one of `label`/`category` holds the integer class id and
+    the other the name (they are swapped in some files); detect which is which."""
+    if pd.api.types.is_numeric_dtype(df["category"]):
+        return df["category"].astype(int), df["label"].astype(str)
+    return df["label"].astype(int), df["category"].astype(str)
+ 
+ 
+def load_test_sets(data_dir):
+    sets = {}
+    for k in GROUPS:
+        f = Path(data_dir) / f"test_set_{k}.csv"
+        if f.exists():
+            sets[k] = pd.read_csv(f)
+        else:
+            print(f"warning: {f} not found; group {k} cannot be used for project matching", file=sys.stderr)
+    return sets
+ 
+ 
+def class_names(test_sets):
+    names = {i: f"class_{i}" for i in range(N_CLASSES)}
+    for df in test_sets.values():
+        ids, nm = class_columns(df)
+        names.update(dict(zip(ids, nm)))
     return names
  
  
-def load_pairs(pairs_dir):
+def project_groups(test_sets):
+    """project key -> set of groups whose HELD-OUT test set contains that project."""
+    out = {}
+    for k, df in test_sets.items():
+        for p in df["project"].astype(str).map(project_key).unique():
+            out.setdefault(p, set()).add(k)
+    return out
+ 
+ 
+def code_lookup(test_sets, names):
+    """squashed code -> (class id, class name) for tests that are in the FlakyLens dataset."""
+    out = {}
+    for df in test_sets.values():
+        ids, nm = class_columns(df)
+        for code, i, n in zip(df["full_code"].astype(str), ids, nm):
+            out[squash(code)] = (int(i), n)
+    return out
+ 
+ 
+def load_pairs(pairs_dir, dedent=True):
     rows = []
     for d in sorted(Path(pairs_dir).glob("*/")):
-        if (d / "pre.java").exists() and (d / "post.java").exists():
-            meta = json.loads((d / "meta.json").read_text()) if (d / "meta.json").exists() else {}
-            rows.append({"pair_id": d.name, "idoft_category": meta.get("category"),
-                         "pre": (d / "pre.java").read_text(), "post": (d / "post.java").read_text()})
+        if not ((d / "pre.java").exists() and (d / "post.java").exists()):
+            continue
+        meta = json.loads((d / "meta.json").read_text()) if (d / "meta.json").exists() else {}
+        pre, post = (d / "pre.java").read_text(), (d / "post.java").read_text()
+        if dedent:  # FlakyLens' dataset stores methods with the class indentation removed
+            pre, post = textwrap.dedent(pre).strip("\n"), textwrap.dedent(post).strip("\n")
+        rows.append({"pair_id": d.name, "idoft_category": meta.get("category"),
+                     "project": project_key(meta.get("project", d.name.split("__")[0] + "_" + d.name.split("__")[1])),
+                     "pre": pre, "post": post})
     return rows
  
  
-def build_table(pairs, pre_p, post_p, pre_n, post_n, names, max_len, nonflaky, seen_codes=None):
-    k = pre_p.shape[1]
+def assign_groups(pairs, proj_groups):
+    """Return (tuple of groups per pair, 'held_out' | 'all_groups_avg')."""
+    groups, source = [], []
+    for p in pairs:
+        g = proj_groups.get(p["project"])
+        groups.append(tuple(sorted(g)) if g else GROUPS)
+        source.append("held_out" if g else "all_groups_avg")
+    return groups, source
+ 
+ 
+def classify(pairs, scorer, groups):
+    """Score pre/post with the chosen model(s); average if several. Returns arrays + token info."""
+    pre_ids, pre_mask, pre_n = scorer.encode([p["pre"] for p in pairs])
+    post_ids, post_mask, post_n = scorer.encode([p["post"] for p in pairs])
+    n = len(pairs)
+    pre_sum, post_sum, cnt = np.zeros((n, N_CLASSES)), np.zeros((n, N_CLASSES)), np.zeros(n)
+    for k in GROUPS:
+        idx = [i for i, g in enumerate(groups) if k in g]
+        if not idx:
+            continue
+        pre_sum[idx] += scorer.score(k, [pre_ids[i] for i in idx], [pre_mask[i] for i in idx])
+        post_sum[idx] += scorer.score(k, [post_ids[i] for i in idx], [post_mask[i] for i in idx])
+        cnt[idx] += 1
+        print(f"  group {k} model: scored {len(idx)} pairs", file=sys.stderr)
+    same = np.array([a == b for a, b in zip(pre_ids, post_ids)])
+    return pre_sum / cnt[:, None], post_sum / cnt[:, None], pre_n, post_n, same
+ 
+ 
+def build_table(pairs, pre_p, post_p, pre_n, post_n, same_input, groups, source, names, lookup):
     out = pd.DataFrame({
         "pair_id": [p["pair_id"] for p in pairs],
         "idoft_category": [p["idoft_category"] for p in pairs],
+        "model_groups": ["+".join(map(str, g)) for g in groups],
+        "group_source": source,
         "pre_tokens": pre_n, "post_tokens": post_n,
-        "truncated": (pre_n > max_len) | (post_n > max_len),
+        "truncated": (pre_n > MAX_LEN) | (post_n > MAX_LEN),
+        "identical_after_truncation": same_input,   # fix lies past token 512 -> no signal possible
     })
     for tag, P in (("pre", pre_p), ("post", post_p)):
         top = P.argmax(1)
@@ -105,109 +187,102 @@ def build_table(pairs, pre_p, post_p, pre_n, post_n, names, max_len, nonflaky, s
         out[f"{tag}_top_name"] = [names[int(t)] for t in top]
         out[f"{tag}_conf"] = P.max(1)
     out["top1_changed"] = out["pre_top"] != out["post_top"]
-    # confidence in the class the model chose for the PRE-fix code, before vs after the fix
     idx = np.arange(len(out))
     out["p_pre_class_pre"] = pre_p[idx, out["pre_top"].values]
     out["p_pre_class_post"] = post_p[idx, out["pre_top"].values]
     out["delta_pre_class"] = out["p_pre_class_post"] - out["p_pre_class_pre"]
-    if nonflaky is not None:
-        out["p_nonflaky_pre"] = pre_p[:, nonflaky]
-        out["p_nonflaky_post"] = post_p[:, nonflaky]
-    for i in range(k):
-        out[f"p_{names[i]}_pre"] = pre_p[:, i]
-        out[f"p_{names[i]}_post"] = post_p[:, i]
-    if seen_codes is not None:
-        out["pre_in_flakylens_csv"] = [squash(p["pre"]) in seen_codes for p in pairs]
+    out["p_nonflaky_pre"], out["p_nonflaky_post"] = pre_p[:, NONFLAKY], post_p[:, NONFLAKY]
+    for i in range(N_CLASSES):
+        out[f"p_{names[i]}_pre"], out[f"p_{names[i]}_post"] = pre_p[:, i], post_p[:, i]
+    hit = [lookup.get(squash(p["pre"])) for p in pairs]
+    out["in_flakylens_dataset"] = [h is not None for h in hit]
+    out["dataset_class"] = [h[1] if h else None for h in hit]   # the authors' ground-truth label, if the test is in their data
     return out
  
  
-def summarize(out, names, nonflaky):
+def summarize(out):
     n = len(out)
-    lines = [f"pairs: {n}   truncated at max length: {int(out['truncated'].sum())}"]
-    if "pre_in_flakylens_csv" in out:
-        lines.append(f"pre-fix code found verbatim in the FlakyLens dataset (possible train/test overlap): "
-                     f"{int(out['pre_in_flakylens_csv'].sum())}")
-    lines.append("\npre-fix top-1 prediction counts:\n" + out["pre_top_name"].value_counts().to_string())
-    lines.append(f"\ntop-1 changed after the fix: {int(out['top1_changed'].sum())}/{n} "
-                 f"({out['top1_changed'].mean():.0%})")
-    if nonflaky is not None:
-        flaky_pre = out[out["pre_top"] != nonflaky]
-        lines.append(f"\nmodel called the PRE-fix code flaky: {len(flaky_pre)}/{n}")
-        lines.append("(pairs the model already calls non-flaky before the fix cannot show a fix effect)")
-        if len(flaky_pre):
-            flip = int((flaky_pre["post_top"] == nonflaky).sum())
-            lines.append(f"  of those, post-fix flipped to non-flaky: {flip}/{len(flaky_pre)} ({flip/len(flaky_pre):.0%})")
-            lines.append(f"  of those, mean confidence change in the pre-predicted class: "
-                         f"{flaky_pre['delta_pre_class'].mean():+.3f}  (negative = confidence dropped, as expected)")
-            lines.append(f"  of those, confidence dropped: {int((flaky_pre['delta_pre_class'] < 0).sum())}/{len(flaky_pre)}")
-            by = flaky_pre.groupby("pre_top_name").agg(n=("pair_id", "size"),
-                                                        flipped=("post_top", lambda s: int((s == nonflaky).sum())),
-                                                        mean_delta=("delta_pre_class", "mean"))
-            lines.append("\nper pre-predicted category:\n" + by.round(3).to_string())
-    return "\n".join(lines)
+    L = [f"pairs: {n}",
+         f"  scored by a held-out model (project not in that model's training data): {(out['group_source'] == 'held_out').sum()}",
+         f"  scored by the average of all 4 models (project not in FlakyLens' data):   {(out['group_source'] != 'held_out').sum()}",
+         f"longer than 512 tokens (truncated): {int(out['truncated'].sum())}",
+         f"pre and post are IDENTICAL after truncation (fix lies past token 512, so no signal): "
+         f"{int(out['identical_after_truncation'].sum())}",
+         f"pre-fix code found verbatim in FlakyLens' dataset: {int(out['in_flakylens_dataset'].sum())}",
+         "\npre-fix top-1 prediction counts:\n" + out["pre_top_name"].value_counts().to_string(),
+         f"\ntop-1 changed after the fix: {int(out['top1_changed'].sum())}/{n} ({out['top1_changed'].mean():.0%})"]
+    usable = out[~out["identical_after_truncation"]]
+    flaky_pre = usable[usable["pre_top"] != NONFLAKY]
+    L.append(f"\namong the {len(usable)} pairs whose input actually changes, the model called the PRE-fix code flaky in {len(flaky_pre)}")
+    L.append("(pairs it already calls non-flaky before the fix cannot show a fix effect)")
+    if len(flaky_pre):
+        flip = int((flaky_pre["post_top"] == NONFLAKY).sum())
+        L.append(f"  post-fix flipped to non-flaky: {flip}/{len(flaky_pre)} ({flip / len(flaky_pre):.0%})")
+        L.append(f"  confidence in the pre-predicted class dropped: {int((flaky_pre['delta_pre_class'] < 0).sum())}/{len(flaky_pre)}; "
+                 f"mean change {flaky_pre['delta_pre_class'].mean():+.3f}")
+        by = flaky_pre.groupby("pre_top_name").agg(n=("pair_id", "size"),
+                                                    flipped=("post_top", lambda s: int((s == NONFLAKY).sum())),
+                                                    mean_delta=("delta_pre_class", "mean"))
+        L.append("\nper pre-predicted category:\n" + by.round(3).to_string())
+    return "\n".join(L)
  
  
-def run_sanity(csv_path, n, tok, model, device, max_len):
-    d = pd.read_csv(csv_path, usecols=["full_code", "label"])
-    d = d.sample(n=min(n, len(d)), random_state=0)
-    probs, _ = predict(d["full_code"].astype(str).tolist(), tok, model, device, max_len)
-    pred = probs.argmax(1)
-    acc = float((pred == d["label"].values).mean())
-    print(f"sanity: accuracy on {len(d)} labelled FlakyLens tests = {acc:.1%}")
-    print("(these include tests the model was trained on, so expect HIGH accuracy; this only checks that "
-          "loading, tokenization and the label order are right)")
-    if acc < 0.5:
-        print("WARNING: accuracy is low. Suspect the loader, the tokenizer, or the label order.")
-    return acc
+def run_sanity(scorer, test_sets, n_total):
+    """Score held-out rows with the matching model; accuracy should be far above chance (~17%)."""
+    per = max(1, n_total // len(test_sets))
+    tot = ok = 0
+    for k, df in sorted(test_sets.items()):
+        d = df.sample(n=min(per, len(df)), random_state=0)
+        ids_true, _ = class_columns(d)
+        ids, mask, _ = scorer.encode(d["full_code"].astype(str).tolist())
+        pred = scorer.score(k, ids, mask).argmax(1)
+        acc = float((pred == ids_true.values).mean())
+        print(f"group {k}: accuracy {acc:.1%} on {len(d)} held-out tests")
+        tot += len(d)
+        ok += int((pred == ids_true.values).sum())
+    print(f"overall: {ok / tot:.1%}  (random guessing would be ~17%)")
+    if ok / tot < 0.4:
+        print("WARNING: very low. Something is wrong with loading, tokenizing or the group/checkpoint pairing.")
  
  
 # --------------------------------------------------------------------------
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--model", required=True, help="HF directory (config.json) or .pt/.bin/.pth file")
-    ap.add_argument("--base-model", default="microsoft/codebert-base",
-                    help="used for the tokenizer / architecture when --model is a bare weights file")
-    ap.add_argument("--flakylens-csv", help="FlakyLens_dataset_with_nonflaky_indented.csv (label names, overlap check)")
-    ap.add_argument("--num-labels", type=int, default=6)
-    ap.add_argument("--nonflaky-label", type=int, default=5, help="label id of the non-flaky class (5 in the FlakyLens CSV)")
-    ap.add_argument("--max-len", type=int, default=512)
+    ap.add_argument("--src-dir", default="/app/src", help="folder containing the authors' codebert_model.py")
+    ap.add_argument("--data-dir", default="/app/src/FlakyLens_Categorization_PerProject-Data",
+                    help="folder containing test_set_1..4.csv")
+    ap.add_argument("--models-dir", default="/app/models")
+    ap.add_argument("--weights-pattern", default="per_project_model_weights_on__dataset_project_group_{k}.pt")
     ap.add_argument("--pairs", default=str(ROOT / "data" / "pairs"))
     ap.add_argument("--out", default=str(ROOT / "results" / "pair_predictions.csv"))
     ap.add_argument("--device", default="auto")
-    ap.add_argument("--sanity", type=int, default=0, metavar="N",
-                    help="only check the model on N labelled rows of --flakylens-csv, then exit")
+    ap.add_argument("--no-dedent", action="store_true", help="do not strip the common indentation from methods")
+    ap.add_argument("--sanity", type=int, default=0, metavar="N", help="check the models on N held-out tests, then exit")
     args = ap.parse_args()
  
     import torch
     device = ("cuda" if torch.cuda.is_available() else "cpu") if args.device == "auto" else args.device
-    tok, model = load_model(args.model, args.base_model, args.num_labels, device)
-    print(f"model loaded on {device}")
+    scorer = Scorer(args.src_dir, args.models_dir, args.weights_pattern, device)
+    print(f"model ready on {device}", file=sys.stderr)
  
+    test_sets = load_test_sets(args.data_dir)
+    if not test_sets:
+        sys.exit(f"no test_set_*.csv found in {args.data_dir}")
     if args.sanity:
-        if not args.flakylens_csv:
-            sys.exit("--sanity needs --flakylens-csv")
-        run_sanity(args.flakylens_csv, args.sanity, tok, model, device, args.max_len)
-        return
+        return run_sanity(scorer, test_sets, args.sanity)
  
-    pairs = load_pairs(args.pairs)
+    pairs = load_pairs(args.pairs, dedent=not args.no_dedent)
     if not pairs:
-        sys.exit(f"no pairs found in {args.pairs} (expected <pair_id>/pre.java and post.java)")
-    pre_p, pre_n = predict([p["pre"] for p in pairs], tok, model, device, args.max_len)
-    post_p, post_n = predict([p["post"] for p in pairs], tok, model, device, args.max_len)
- 
-    names = label_names(args.flakylens_csv, pre_p.shape[1])
-    seen = None
-    if args.flakylens_csv:
-        seen = {squash(c) for c in pd.read_csv(args.flakylens_csv, usecols=["full_code"])["full_code"].astype(str)}
-    nonflaky = args.nonflaky_label if args.nonflaky_label < pre_p.shape[1] else None
-    out = build_table(pairs, pre_p, post_p, pre_n, post_n, names, args.max_len, nonflaky, seen)
- 
+        sys.exit(f"no pairs found in {args.pairs}")
+    names = class_names(test_sets)
+    groups, source = assign_groups(pairs, project_groups(test_sets))
+    pre_p, post_p, pre_n, post_n, same = classify(pairs, scorer, groups)
+    out = build_table(pairs, pre_p, post_p, pre_n, post_n, same, groups, source, names, code_lookup(test_sets, names))
     Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     out.to_csv(args.out, index=False)
     print(f"wrote {args.out}\n")
-    print(summarize(out, names, nonflaky))
+    print(summarize(out))
  
  
 if __name__ == "__main__":
     main()
- 
