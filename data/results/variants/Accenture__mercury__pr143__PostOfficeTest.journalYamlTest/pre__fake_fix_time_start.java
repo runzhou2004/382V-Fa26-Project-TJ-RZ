@@ -1,0 +1,11 @@
+    @Test
+    public void journalYamlTest() {
+        java.time.Clock fixedClock = java.time.Clock.fixed(java.time.Instant.EPOCH, java.time.ZoneOffset.UTC);
+        String MY_FUNCTION = "my.test.function";
+        String ANOTHER_FUNCTION = "another.function";
+        EventEmitter po = EventEmitter.getInstance();
+        List<String> routes = po.getJournaledRoutes();
+        Assert.assertEquals(2, routes.size());
+        Assert.assertEquals(ANOTHER_FUNCTION, routes.get(0));
+        Assert.assertEquals(MY_FUNCTION, routes.get(1));
+    }

@@ -133,8 +133,8 @@ def load_pairs(pairs_dir, dedent=True):
     for d in sorted(Path(pairs_dir).glob("*/")):
         if not ((d / "pre.java").exists() and (d / "post.java").exists()):
             continue
-        meta = json.loads((d / "meta.json").read_text()) if (d / "meta.json").exists() else {}
-        pre, post = (d / "pre.java").read_text(), (d / "post.java").read_text()
+        meta = json.loads((d / "meta.json").read_text(encoding="utf-8")) if (d / "meta.json").exists() else {}
+        pre, post = (d / "pre.java").read_text(encoding="utf-8"), (d / "post.java").read_text(encoding="utf-8")
         if dedent:  # FlakyLens' dataset stores methods with the class indentation removed
             pre, post = textwrap.dedent(pre).strip("\n"), textwrap.dedent(post).strip("\n")
         rows.append({"pair_id": d.name, "idoft_category": meta.get("category"),

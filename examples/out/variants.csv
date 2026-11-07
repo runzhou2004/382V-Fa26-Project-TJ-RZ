@@ -1,0 +1,1784 @@
+id,base,project,idoft_category,variant,variant_id,suite,fix_kind,expected,target_category,code
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre,demo__scores__pr1__ScoresTest.testSerializeScores:pre,original,none,,,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:rename_locals,demo__scores__pr1__ScoresTest.testSerializeScores:pre:rename_locals,invariance,none,unchanged,,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> v0 = new HashMap<>();
+        v0.put(""alice"", 3);
+        v0.put(""bob"", 5);
+        Map<String, Integer> v1 = new HashMap<>();
+        v1.put(""x"", 1);
+        StringBuilder v2 = new StringBuilder();
+        for (String v3 : v0.keySet()) {
+            v2.append(v3).append(',');
+        }
+        assertEquals(""alice,bob,"", v2.toString());
+        assertTrue(v1.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:reindent_tabs,demo__scores__pr1__ScoresTest.testSerializeScores:pre:reindent_tabs,invariance,none,unchanged,,"@Test
+	public void testSerializeScores() throws Exception {
+		// order of the serialized scores
+		Map<String, Integer> scores = new HashMap<>();
+		scores.put(""alice"", 3);
+		scores.put(""bob"", 5);
+		Map<String, Integer> lookup = new HashMap<>();
+		lookup.put(""x"", 1);
+		StringBuilder sb = new StringBuilder();
+		for (String key : scores.keySet()) {
+			sb.append(key).append(',');
+		}
+		assertEquals(""alice,bob,"", sb.toString());
+		assertTrue(lookup.containsKey(""x""));
+	}"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:reindent_2space,demo__scores__pr1__ScoresTest.testSerializeScores:pre:reindent_2space,invariance,none,unchanged,,"@Test
+  public void testSerializeScores() throws Exception {
+    // order of the serialized scores
+    Map<String, Integer> scores = new HashMap<>();
+    scores.put(""alice"", 3);
+    scores.put(""bob"", 5);
+    Map<String, Integer> lookup = new HashMap<>();
+    lookup.put(""x"", 1);
+    StringBuilder sb = new StringBuilder();
+    for (String key : scores.keySet()) {
+      sb.append(key).append(',');
+    }
+    assertEquals(""alice,bob,"", sb.toString());
+    assertTrue(lookup.containsKey(""x""));
+  }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:neutral_comment,demo__scores__pr1__ScoresTest.testSerializeScores:pre:neutral_comment,invariance,none,unchanged,,"@Test
+    public void testSerializeScores() throws Exception {
+        // reviewed
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:trailing_comment,demo__scores__pr1__ScoresTest.testSerializeScores:pre:trailing_comment,invariance,none,unchanged,,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>(); // ok
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:strip_comments,demo__scores__pr1__ScoresTest.testSerializeScores:pre:strip_comments,invariance,none,unchanged,,"@Test
+    public void testSerializeScores() throws Exception {
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:dead_code,demo__scores__pr1__ScoresTest.testSerializeScores:pre:dead_code,invariance,none,unchanged,,"@Test
+    public void testSerializeScores() throws Exception {
+        int unusedCounter = 0;
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_async_wait,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_async_wait,token_probe,none,unchanged,async wait,"@Test
+    public void testSerializeScores() throws Exception {
+        // wait for async result, poll until ready, sleep, timeout
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_async_wait_header,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_async_wait_header,token_probe,none,unchanged,async wait,"// wait for async result, poll until ready, sleep, timeout
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_concurrency,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_concurrency,token_probe,none,unchanged,concurrency,"@Test
+    public void testSerializeScores() throws Exception {
+        // thread safe, synchronized access, race condition, lock
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_concurrency_header,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_concurrency_header,token_probe,none,unchanged,concurrency,"// thread safe, synchronized access, race condition, lock
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_time,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_time,token_probe,none,unchanged,time,"@Test
+    public void testSerializeScores() throws Exception {
+        // uses current time, timezone, date, clock
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_time_header,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_time_header,token_probe,none,unchanged,time,"// uses current time, timezone, date, clock
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_unordered_collections,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_unordered_collections,token_probe,none,unchanged,unordered collections,"@Test
+    public void testSerializeScores() throws Exception {
+        // iteration order of HashMap or HashSet, sorted output
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_unordered_collections_header,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_unordered_collections_header,token_probe,none,unchanged,unordered collections,"// iteration order of HashMap or HashSet, sorted output
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_test_order_dependency,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_test_order_dependency,token_probe,none,unchanged,test order dependency,"@Test
+    public void testSerializeScores() throws Exception {
+        // shared static state, depends on test execution order
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_test_order_dependency_header,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_test_order_dependency_header,token_probe,none,unchanged,test order dependency,"// shared static state, depends on test execution order
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_non_flaky,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_non_flaky,token_probe,none,unchanged,non-flaky,"@Test
+    public void testSerializeScores() throws Exception {
+        // deterministic result, stable output, fixed seed, no flakiness
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:comment_words_non_flaky_header,demo__scores__pr1__ScoresTest.testSerializeScores:pre:comment_words_non_flaky_header,token_probe,none,unchanged,non-flaky,"// deterministic result, stable output, fixed seed, no flakiness
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:fake_fix_async_wait_start,demo__scores__pr1__ScoresTest.testSerializeScores:pre:fake_fix_async_wait_start,fake_fix,fake,unchanged,async wait,"@Test
+    public void testSerializeScores() throws Exception {
+        new java.util.concurrent.CountDownLatch(0).getCount();
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:fake_fix_async_wait_end,demo__scores__pr1__ScoresTest.testSerializeScores:pre:fake_fix_async_wait_end,fake_fix,fake,unchanged,async wait,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+        new java.util.concurrent.CountDownLatch(0).getCount();
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:fake_fix_concurrency_start,demo__scores__pr1__ScoresTest.testSerializeScores:pre:fake_fix_concurrency_start,fake_fix,fake,unchanged,concurrency,"@Test
+    public void testSerializeScores() throws Exception {
+        synchronized (new Object()) { }
+        new java.util.concurrent.locks.ReentrantLock().isLocked();
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:fake_fix_concurrency_end,demo__scores__pr1__ScoresTest.testSerializeScores:pre:fake_fix_concurrency_end,fake_fix,fake,unchanged,concurrency,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+        synchronized (new Object()) { }
+        new java.util.concurrent.locks.ReentrantLock().isLocked();
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:fake_fix_time_start,demo__scores__pr1__ScoresTest.testSerializeScores:pre:fake_fix_time_start,fake_fix,fake,unchanged,time,"@Test
+    public void testSerializeScores() throws Exception {
+        java.time.Clock fixedClock = java.time.Clock.fixed(java.time.Instant.EPOCH, java.time.ZoneOffset.UTC);
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:fake_fix_time_end,demo__scores__pr1__ScoresTest.testSerializeScores:pre:fake_fix_time_end,fake_fix,fake,unchanged,time,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+        java.time.Clock fixedClock = java.time.Clock.fixed(java.time.Instant.EPOCH, java.time.ZoneOffset.UTC);
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:fake_fix_unordered_collections_start,demo__scores__pr1__ScoresTest.testSerializeScores:pre:fake_fix_unordered_collections_start,fake_fix,fake,unchanged,unordered collections,"@Test
+    public void testSerializeScores() throws Exception {
+        java.util.Collections.sort(new java.util.ArrayList<String>());
+        new java.util.LinkedHashMap<String, String>().size();
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:fake_fix_unordered_collections_end,demo__scores__pr1__ScoresTest.testSerializeScores:pre:fake_fix_unordered_collections_end,fake_fix,fake,unchanged,unordered collections,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+        java.util.Collections.sort(new java.util.ArrayList<String>());
+        new java.util.LinkedHashMap<String, String>().size();
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:fake_fix_test_order_dependency_start,demo__scores__pr1__ScoresTest.testSerializeScores:pre:fake_fix_test_order_dependency_start,fake_fix,fake,unchanged,test order dependency,"@Test
+    public void testSerializeScores() throws Exception {
+        new java.util.HashMap<String, String>().clear();
+        java.util.Collections.emptyMap().isEmpty();
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:fake_fix_test_order_dependency_end,demo__scores__pr1__ScoresTest.testSerializeScores:pre:fake_fix_test_order_dependency_end,fake_fix,fake,unchanged,test order dependency,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+        new java.util.HashMap<String, String>().clear();
+        java.util.Collections.emptyMap().isEmpty();
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:real_fix_unordered,demo__scores__pr1__ScoresTest.testSerializeScores:pre:real_fix_unordered,real_fix,real_fix,confidence_drop,unordered collections,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,pre,https://github.com/demo/scores,ID,pre:specificity_unordered_unrelated,demo__scores__pr1__ScoresTest.testSerializeScores:pre:specificity_unordered_unrelated,specificity,none,unchanged,unordered collections,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new LinkedHashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post,demo__scores__pr1__ScoresTest.testSerializeScores:post,original,none,,,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:rename_locals,demo__scores__pr1__ScoresTest.testSerializeScores:post:rename_locals,invariance,none,unchanged,,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> v0 = new LinkedHashMap<>();
+        v0.put(""alice"", 3);
+        v0.put(""bob"", 5);
+        Map<String, Integer> v1 = new HashMap<>();
+        v1.put(""x"", 1);
+        StringBuilder v2 = new StringBuilder();
+        for (String v3 : v0.keySet()) {
+            v2.append(v3).append(',');
+        }
+        assertEquals(""alice,bob,"", v2.toString());
+        assertTrue(v1.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:reindent_tabs,demo__scores__pr1__ScoresTest.testSerializeScores:post:reindent_tabs,invariance,none,unchanged,,"@Test
+	public void testSerializeScores() throws Exception {
+		// order of the serialized scores
+		Map<String, Integer> scores = new LinkedHashMap<>();
+		scores.put(""alice"", 3);
+		scores.put(""bob"", 5);
+		Map<String, Integer> lookup = new HashMap<>();
+		lookup.put(""x"", 1);
+		StringBuilder sb = new StringBuilder();
+		for (String key : scores.keySet()) {
+			sb.append(key).append(',');
+		}
+		assertEquals(""alice,bob,"", sb.toString());
+		assertTrue(lookup.containsKey(""x""));
+	}"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:reindent_2space,demo__scores__pr1__ScoresTest.testSerializeScores:post:reindent_2space,invariance,none,unchanged,,"@Test
+  public void testSerializeScores() throws Exception {
+    // order of the serialized scores
+    Map<String, Integer> scores = new LinkedHashMap<>();
+    scores.put(""alice"", 3);
+    scores.put(""bob"", 5);
+    Map<String, Integer> lookup = new HashMap<>();
+    lookup.put(""x"", 1);
+    StringBuilder sb = new StringBuilder();
+    for (String key : scores.keySet()) {
+      sb.append(key).append(',');
+    }
+    assertEquals(""alice,bob,"", sb.toString());
+    assertTrue(lookup.containsKey(""x""));
+  }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:neutral_comment,demo__scores__pr1__ScoresTest.testSerializeScores:post:neutral_comment,invariance,none,unchanged,,"@Test
+    public void testSerializeScores() throws Exception {
+        // reviewed
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:trailing_comment,demo__scores__pr1__ScoresTest.testSerializeScores:post:trailing_comment,invariance,none,unchanged,,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>(); // ok
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:strip_comments,demo__scores__pr1__ScoresTest.testSerializeScores:post:strip_comments,invariance,none,unchanged,,"@Test
+    public void testSerializeScores() throws Exception {
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:dead_code,demo__scores__pr1__ScoresTest.testSerializeScores:post:dead_code,invariance,none,unchanged,,"@Test
+    public void testSerializeScores() throws Exception {
+        int unusedCounter = 0;
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_async_wait,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_async_wait,token_probe,none,unchanged,async wait,"@Test
+    public void testSerializeScores() throws Exception {
+        // wait for async result, poll until ready, sleep, timeout
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_async_wait_header,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_async_wait_header,token_probe,none,unchanged,async wait,"// wait for async result, poll until ready, sleep, timeout
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_concurrency,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_concurrency,token_probe,none,unchanged,concurrency,"@Test
+    public void testSerializeScores() throws Exception {
+        // thread safe, synchronized access, race condition, lock
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_concurrency_header,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_concurrency_header,token_probe,none,unchanged,concurrency,"// thread safe, synchronized access, race condition, lock
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_time,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_time,token_probe,none,unchanged,time,"@Test
+    public void testSerializeScores() throws Exception {
+        // uses current time, timezone, date, clock
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_time_header,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_time_header,token_probe,none,unchanged,time,"// uses current time, timezone, date, clock
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_unordered_collections,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_unordered_collections,token_probe,none,unchanged,unordered collections,"@Test
+    public void testSerializeScores() throws Exception {
+        // iteration order of HashMap or HashSet, sorted output
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_unordered_collections_header,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_unordered_collections_header,token_probe,none,unchanged,unordered collections,"// iteration order of HashMap or HashSet, sorted output
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_test_order_dependency,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_test_order_dependency,token_probe,none,unchanged,test order dependency,"@Test
+    public void testSerializeScores() throws Exception {
+        // shared static state, depends on test execution order
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_test_order_dependency_header,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_test_order_dependency_header,token_probe,none,unchanged,test order dependency,"// shared static state, depends on test execution order
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_non_flaky,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_non_flaky,token_probe,none,unchanged,non-flaky,"@Test
+    public void testSerializeScores() throws Exception {
+        // deterministic result, stable output, fixed seed, no flakiness
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:comment_words_non_flaky_header,demo__scores__pr1__ScoresTest.testSerializeScores:post:comment_words_non_flaky_header,token_probe,none,unchanged,non-flaky,"// deterministic result, stable output, fixed seed, no flakiness
+@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:fake_fix_async_wait_start,demo__scores__pr1__ScoresTest.testSerializeScores:post:fake_fix_async_wait_start,fake_fix,fake,unchanged,async wait,"@Test
+    public void testSerializeScores() throws Exception {
+        new java.util.concurrent.CountDownLatch(0).getCount();
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:fake_fix_async_wait_end,demo__scores__pr1__ScoresTest.testSerializeScores:post:fake_fix_async_wait_end,fake_fix,fake,unchanged,async wait,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+        new java.util.concurrent.CountDownLatch(0).getCount();
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:fake_fix_concurrency_start,demo__scores__pr1__ScoresTest.testSerializeScores:post:fake_fix_concurrency_start,fake_fix,fake,unchanged,concurrency,"@Test
+    public void testSerializeScores() throws Exception {
+        synchronized (new Object()) { }
+        new java.util.concurrent.locks.ReentrantLock().isLocked();
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:fake_fix_concurrency_end,demo__scores__pr1__ScoresTest.testSerializeScores:post:fake_fix_concurrency_end,fake_fix,fake,unchanged,concurrency,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+        synchronized (new Object()) { }
+        new java.util.concurrent.locks.ReentrantLock().isLocked();
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:fake_fix_time_start,demo__scores__pr1__ScoresTest.testSerializeScores:post:fake_fix_time_start,fake_fix,fake,unchanged,time,"@Test
+    public void testSerializeScores() throws Exception {
+        java.time.Clock fixedClock = java.time.Clock.fixed(java.time.Instant.EPOCH, java.time.ZoneOffset.UTC);
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:fake_fix_time_end,demo__scores__pr1__ScoresTest.testSerializeScores:post:fake_fix_time_end,fake_fix,fake,unchanged,time,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+        java.time.Clock fixedClock = java.time.Clock.fixed(java.time.Instant.EPOCH, java.time.ZoneOffset.UTC);
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:fake_fix_unordered_collections_start,demo__scores__pr1__ScoresTest.testSerializeScores:post:fake_fix_unordered_collections_start,fake_fix,fake,unchanged,unordered collections,"@Test
+    public void testSerializeScores() throws Exception {
+        java.util.Collections.sort(new java.util.ArrayList<String>());
+        new java.util.LinkedHashMap<String, String>().size();
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:fake_fix_unordered_collections_end,demo__scores__pr1__ScoresTest.testSerializeScores:post:fake_fix_unordered_collections_end,fake_fix,fake,unchanged,unordered collections,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+        java.util.Collections.sort(new java.util.ArrayList<String>());
+        new java.util.LinkedHashMap<String, String>().size();
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:fake_fix_test_order_dependency_start,demo__scores__pr1__ScoresTest.testSerializeScores:post:fake_fix_test_order_dependency_start,fake_fix,fake,unchanged,test order dependency,"@Test
+    public void testSerializeScores() throws Exception {
+        new java.util.HashMap<String, String>().clear();
+        java.util.Collections.emptyMap().isEmpty();
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:fake_fix_test_order_dependency_end,demo__scores__pr1__ScoresTest.testSerializeScores:post:fake_fix_test_order_dependency_end,fake_fix,fake,unchanged,test order dependency,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new LinkedHashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+        new java.util.HashMap<String, String>().clear();
+        java.util.Collections.emptyMap().isEmpty();
+    }"
+demo__scores__pr1__ScoresTest.testSerializeScores,post,https://github.com/demo/scores,ID,post:real_cause_unordered,demo__scores__pr1__ScoresTest.testSerializeScores:post:real_cause_unordered,real_cause,real_cause,confidence_rise,unordered collections,"@Test
+    public void testSerializeScores() throws Exception {
+        // order of the serialized scores
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put(""alice"", 3);
+        scores.put(""bob"", 5);
+        Map<String, Integer> lookup = new HashMap<>();
+        lookup.put(""x"", 1);
+        StringBuilder sb = new StringBuilder();
+        for (String key : scores.keySet()) {
+            sb.append(key).append(',');
+        }
+        assertEquals(""alice,bob,"", sb.toString());
+        assertTrue(lookup.containsKey(""x""));
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre,demo__threads__pr2__CounterTest.testThreads:pre,original,none,,,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:rename_locals,demo__threads__pr2__CounterTest.testThreads:pre:rename_locals,invariance,none,unchanged,,"@Test
+    public void testThreads() throws Exception {
+        final Object v0 = new Object();
+        final int[] v1 = new int[1];
+        Thread v2 = new Thread(() -> { synchronized (v0) { v1[0]++; } });
+        Thread v3 = new Thread(() -> { synchronized (v0) { v1[0]++; } });
+        v2.start();
+        v3.start();
+        v2.join();
+        v3.join();
+        assertEquals(2, v1[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:reindent_tabs,demo__threads__pr2__CounterTest.testThreads:pre:reindent_tabs,invariance,none,unchanged,,"@Test
+	public void testThreads() throws Exception {
+		final Object lock = new Object();
+		final int[] shared = new int[1];
+		Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+		Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+		t1.start();
+		t2.start();
+		t1.join();
+		t2.join();
+		assertEquals(2, shared[0]);
+	}"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:reindent_2space,demo__threads__pr2__CounterTest.testThreads:pre:reindent_2space,invariance,none,unchanged,,"@Test
+  public void testThreads() throws Exception {
+    final Object lock = new Object();
+    final int[] shared = new int[1];
+    Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+    Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+    t1.start();
+    t2.start();
+    t1.join();
+    t2.join();
+    assertEquals(2, shared[0]);
+  }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:neutral_comment,demo__threads__pr2__CounterTest.testThreads:pre:neutral_comment,invariance,none,unchanged,,"@Test
+    public void testThreads() throws Exception {
+        // reviewed
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:trailing_comment,demo__threads__pr2__CounterTest.testThreads:pre:trailing_comment,invariance,none,unchanged,,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object(); // ok
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:dead_code,demo__threads__pr2__CounterTest.testThreads:pre:dead_code,invariance,none,unchanged,,"@Test
+    public void testThreads() throws Exception {
+        int unusedCounter = 0;
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_async_wait,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_async_wait,token_probe,none,unchanged,async wait,"@Test
+    public void testThreads() throws Exception {
+        // wait for async result, poll until ready, sleep, timeout
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_async_wait_header,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_async_wait_header,token_probe,none,unchanged,async wait,"// wait for async result, poll until ready, sleep, timeout
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_concurrency,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_concurrency,token_probe,none,unchanged,concurrency,"@Test
+    public void testThreads() throws Exception {
+        // thread safe, synchronized access, race condition, lock
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_concurrency_header,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_concurrency_header,token_probe,none,unchanged,concurrency,"// thread safe, synchronized access, race condition, lock
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_time,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_time,token_probe,none,unchanged,time,"@Test
+    public void testThreads() throws Exception {
+        // uses current time, timezone, date, clock
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_time_header,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_time_header,token_probe,none,unchanged,time,"// uses current time, timezone, date, clock
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_unordered_collections,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_unordered_collections,token_probe,none,unchanged,unordered collections,"@Test
+    public void testThreads() throws Exception {
+        // iteration order of HashMap or HashSet, sorted output
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_unordered_collections_header,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_unordered_collections_header,token_probe,none,unchanged,unordered collections,"// iteration order of HashMap or HashSet, sorted output
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_test_order_dependency,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_test_order_dependency,token_probe,none,unchanged,test order dependency,"@Test
+    public void testThreads() throws Exception {
+        // shared static state, depends on test execution order
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_test_order_dependency_header,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_test_order_dependency_header,token_probe,none,unchanged,test order dependency,"// shared static state, depends on test execution order
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_non_flaky,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_non_flaky,token_probe,none,unchanged,non-flaky,"@Test
+    public void testThreads() throws Exception {
+        // deterministic result, stable output, fixed seed, no flakiness
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:comment_words_non_flaky_header,demo__threads__pr2__CounterTest.testThreads:pre:comment_words_non_flaky_header,token_probe,none,unchanged,non-flaky,"// deterministic result, stable output, fixed seed, no flakiness
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:fake_fix_async_wait_start,demo__threads__pr2__CounterTest.testThreads:pre:fake_fix_async_wait_start,fake_fix,fake,unchanged,async wait,"@Test
+    public void testThreads() throws Exception {
+        new java.util.concurrent.CountDownLatch(0).getCount();
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:fake_fix_async_wait_end,demo__threads__pr2__CounterTest.testThreads:pre:fake_fix_async_wait_end,fake_fix,fake,unchanged,async wait,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+        new java.util.concurrent.CountDownLatch(0).getCount();
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:fake_fix_concurrency_start,demo__threads__pr2__CounterTest.testThreads:pre:fake_fix_concurrency_start,fake_fix,fake,unchanged,concurrency,"@Test
+    public void testThreads() throws Exception {
+        synchronized (new Object()) { }
+        new java.util.concurrent.locks.ReentrantLock().isLocked();
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:fake_fix_concurrency_end,demo__threads__pr2__CounterTest.testThreads:pre:fake_fix_concurrency_end,fake_fix,fake,unchanged,concurrency,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+        synchronized (new Object()) { }
+        new java.util.concurrent.locks.ReentrantLock().isLocked();
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:fake_fix_time_start,demo__threads__pr2__CounterTest.testThreads:pre:fake_fix_time_start,fake_fix,fake,unchanged,time,"@Test
+    public void testThreads() throws Exception {
+        java.time.Clock fixedClock = java.time.Clock.fixed(java.time.Instant.EPOCH, java.time.ZoneOffset.UTC);
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:fake_fix_time_end,demo__threads__pr2__CounterTest.testThreads:pre:fake_fix_time_end,fake_fix,fake,unchanged,time,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+        java.time.Clock fixedClock = java.time.Clock.fixed(java.time.Instant.EPOCH, java.time.ZoneOffset.UTC);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:fake_fix_unordered_collections_start,demo__threads__pr2__CounterTest.testThreads:pre:fake_fix_unordered_collections_start,fake_fix,fake,unchanged,unordered collections,"@Test
+    public void testThreads() throws Exception {
+        java.util.Collections.sort(new java.util.ArrayList<String>());
+        new java.util.LinkedHashMap<String, String>().size();
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:fake_fix_unordered_collections_end,demo__threads__pr2__CounterTest.testThreads:pre:fake_fix_unordered_collections_end,fake_fix,fake,unchanged,unordered collections,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+        java.util.Collections.sort(new java.util.ArrayList<String>());
+        new java.util.LinkedHashMap<String, String>().size();
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:fake_fix_test_order_dependency_start,demo__threads__pr2__CounterTest.testThreads:pre:fake_fix_test_order_dependency_start,fake_fix,fake,unchanged,test order dependency,"@Test
+    public void testThreads() throws Exception {
+        new java.util.HashMap<String, String>().clear();
+        java.util.Collections.emptyMap().isEmpty();
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:fake_fix_test_order_dependency_end,demo__threads__pr2__CounterTest.testThreads:pre:fake_fix_test_order_dependency_end,fake_fix,fake,unchanged,test order dependency,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+        new java.util.HashMap<String, String>().clear();
+        java.util.Collections.emptyMap().isEmpty();
+    }"
+demo__threads__pr2__CounterTest.testThreads,pre,https://github.com/demo/threads,NOD,pre:real_cause_concurrency_unsync,demo__threads__pr2__CounterTest.testThreads:pre:real_cause_concurrency_unsync,real_cause,real_cause,confidence_rise,concurrency,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { { shared[0]++; } });
+        Thread t2 = new Thread(() -> { { shared[0]++; } });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post,demo__threads__pr2__CounterTest.testThreads:post,original,none,,,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:rename_locals,demo__threads__pr2__CounterTest.testThreads:post:rename_locals,invariance,none,unchanged,,"@Test
+    public void testThreads() throws Exception {
+        final Object v0 = new Object();
+        final int[] v1 = new int[1];
+        Thread v2 = new Thread(() -> { synchronized (v0) { v1[0]++; } });
+        Thread v3 = new Thread(() -> { synchronized (v0) { v1[0]++; } });
+        v2.start();
+        v2.join();
+        v3.start();
+        v3.join();
+        assertEquals(2, v1[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:reindent_tabs,demo__threads__pr2__CounterTest.testThreads:post:reindent_tabs,invariance,none,unchanged,,"@Test
+	public void testThreads() throws Exception {
+		final Object lock = new Object();
+		final int[] shared = new int[1];
+		Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+		Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+		t1.start();
+		t1.join();
+		t2.start();
+		t2.join();
+		assertEquals(2, shared[0]);
+	}"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:reindent_2space,demo__threads__pr2__CounterTest.testThreads:post:reindent_2space,invariance,none,unchanged,,"@Test
+  public void testThreads() throws Exception {
+    final Object lock = new Object();
+    final int[] shared = new int[1];
+    Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+    Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+    t1.start();
+    t1.join();
+    t2.start();
+    t2.join();
+    assertEquals(2, shared[0]);
+  }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:neutral_comment,demo__threads__pr2__CounterTest.testThreads:post:neutral_comment,invariance,none,unchanged,,"@Test
+    public void testThreads() throws Exception {
+        // reviewed
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:trailing_comment,demo__threads__pr2__CounterTest.testThreads:post:trailing_comment,invariance,none,unchanged,,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object(); // ok
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:dead_code,demo__threads__pr2__CounterTest.testThreads:post:dead_code,invariance,none,unchanged,,"@Test
+    public void testThreads() throws Exception {
+        int unusedCounter = 0;
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_async_wait,demo__threads__pr2__CounterTest.testThreads:post:comment_words_async_wait,token_probe,none,unchanged,async wait,"@Test
+    public void testThreads() throws Exception {
+        // wait for async result, poll until ready, sleep, timeout
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_async_wait_header,demo__threads__pr2__CounterTest.testThreads:post:comment_words_async_wait_header,token_probe,none,unchanged,async wait,"// wait for async result, poll until ready, sleep, timeout
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_concurrency,demo__threads__pr2__CounterTest.testThreads:post:comment_words_concurrency,token_probe,none,unchanged,concurrency,"@Test
+    public void testThreads() throws Exception {
+        // thread safe, synchronized access, race condition, lock
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_concurrency_header,demo__threads__pr2__CounterTest.testThreads:post:comment_words_concurrency_header,token_probe,none,unchanged,concurrency,"// thread safe, synchronized access, race condition, lock
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_time,demo__threads__pr2__CounterTest.testThreads:post:comment_words_time,token_probe,none,unchanged,time,"@Test
+    public void testThreads() throws Exception {
+        // uses current time, timezone, date, clock
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_time_header,demo__threads__pr2__CounterTest.testThreads:post:comment_words_time_header,token_probe,none,unchanged,time,"// uses current time, timezone, date, clock
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_unordered_collections,demo__threads__pr2__CounterTest.testThreads:post:comment_words_unordered_collections,token_probe,none,unchanged,unordered collections,"@Test
+    public void testThreads() throws Exception {
+        // iteration order of HashMap or HashSet, sorted output
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_unordered_collections_header,demo__threads__pr2__CounterTest.testThreads:post:comment_words_unordered_collections_header,token_probe,none,unchanged,unordered collections,"// iteration order of HashMap or HashSet, sorted output
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_test_order_dependency,demo__threads__pr2__CounterTest.testThreads:post:comment_words_test_order_dependency,token_probe,none,unchanged,test order dependency,"@Test
+    public void testThreads() throws Exception {
+        // shared static state, depends on test execution order
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_test_order_dependency_header,demo__threads__pr2__CounterTest.testThreads:post:comment_words_test_order_dependency_header,token_probe,none,unchanged,test order dependency,"// shared static state, depends on test execution order
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_non_flaky,demo__threads__pr2__CounterTest.testThreads:post:comment_words_non_flaky,token_probe,none,unchanged,non-flaky,"@Test
+    public void testThreads() throws Exception {
+        // deterministic result, stable output, fixed seed, no flakiness
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:comment_words_non_flaky_header,demo__threads__pr2__CounterTest.testThreads:post:comment_words_non_flaky_header,token_probe,none,unchanged,non-flaky,"// deterministic result, stable output, fixed seed, no flakiness
+@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:fake_fix_async_wait_start,demo__threads__pr2__CounterTest.testThreads:post:fake_fix_async_wait_start,fake_fix,fake,unchanged,async wait,"@Test
+    public void testThreads() throws Exception {
+        new java.util.concurrent.CountDownLatch(0).getCount();
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:fake_fix_async_wait_end,demo__threads__pr2__CounterTest.testThreads:post:fake_fix_async_wait_end,fake_fix,fake,unchanged,async wait,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+        new java.util.concurrent.CountDownLatch(0).getCount();
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:fake_fix_concurrency_start,demo__threads__pr2__CounterTest.testThreads:post:fake_fix_concurrency_start,fake_fix,fake,unchanged,concurrency,"@Test
+    public void testThreads() throws Exception {
+        synchronized (new Object()) { }
+        new java.util.concurrent.locks.ReentrantLock().isLocked();
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:fake_fix_concurrency_end,demo__threads__pr2__CounterTest.testThreads:post:fake_fix_concurrency_end,fake_fix,fake,unchanged,concurrency,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+        synchronized (new Object()) { }
+        new java.util.concurrent.locks.ReentrantLock().isLocked();
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:fake_fix_time_start,demo__threads__pr2__CounterTest.testThreads:post:fake_fix_time_start,fake_fix,fake,unchanged,time,"@Test
+    public void testThreads() throws Exception {
+        java.time.Clock fixedClock = java.time.Clock.fixed(java.time.Instant.EPOCH, java.time.ZoneOffset.UTC);
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:fake_fix_time_end,demo__threads__pr2__CounterTest.testThreads:post:fake_fix_time_end,fake_fix,fake,unchanged,time,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+        java.time.Clock fixedClock = java.time.Clock.fixed(java.time.Instant.EPOCH, java.time.ZoneOffset.UTC);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:fake_fix_unordered_collections_start,demo__threads__pr2__CounterTest.testThreads:post:fake_fix_unordered_collections_start,fake_fix,fake,unchanged,unordered collections,"@Test
+    public void testThreads() throws Exception {
+        java.util.Collections.sort(new java.util.ArrayList<String>());
+        new java.util.LinkedHashMap<String, String>().size();
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:fake_fix_unordered_collections_end,demo__threads__pr2__CounterTest.testThreads:post:fake_fix_unordered_collections_end,fake_fix,fake,unchanged,unordered collections,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+        java.util.Collections.sort(new java.util.ArrayList<String>());
+        new java.util.LinkedHashMap<String, String>().size();
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:fake_fix_test_order_dependency_start,demo__threads__pr2__CounterTest.testThreads:post:fake_fix_test_order_dependency_start,fake_fix,fake,unchanged,test order dependency,"@Test
+    public void testThreads() throws Exception {
+        new java.util.HashMap<String, String>().clear();
+        java.util.Collections.emptyMap().isEmpty();
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:fake_fix_test_order_dependency_end,demo__threads__pr2__CounterTest.testThreads:post:fake_fix_test_order_dependency_end,fake_fix,fake,unchanged,test order dependency,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        Thread t2 = new Thread(() -> { synchronized (lock) { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+        new java.util.HashMap<String, String>().clear();
+        java.util.Collections.emptyMap().isEmpty();
+    }"
+demo__threads__pr2__CounterTest.testThreads,post,https://github.com/demo/threads,NOD,post:real_cause_concurrency_unsync,demo__threads__pr2__CounterTest.testThreads:post:real_cause_concurrency_unsync,real_cause,real_cause,confidence_rise,concurrency,"@Test
+    public void testThreads() throws Exception {
+        final Object lock = new Object();
+        final int[] shared = new int[1];
+        Thread t1 = new Thread(() -> { { shared[0]++; } });
+        Thread t2 = new Thread(() -> { { shared[0]++; } });
+        t1.start();
+        t1.join();
+        t2.start();
+        t2.join();
+        assertEquals(2, shared[0]);
+    }"
