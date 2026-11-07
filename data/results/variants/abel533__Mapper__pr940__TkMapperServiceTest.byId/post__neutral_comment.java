@@ -1,0 +1,7 @@
+    @Test
+    public final void byId() {
+        // reviewed
+
+        User user = userMapper.selectByPrimaryKey(1);
+        log.info(user == null ? null : user.toString());
+    }
