@@ -1,0 +1,18 @@
+{
+  "pair_id": "questdb__questdb__pr6242__RegexpReplaceStrFunctionFactoryTest.testStackOverFlowError",
+  "project": "https://github.com/questdb/questdb",
+  "category": "NOD",
+  "pr_link": "https://github.com/questdb/questdb/pull/6242",
+  "pre_sha": "4f8418642ac80106feb35f2678d29fe6b1024dbc",
+  "post_sha": "c84ef0f9d9ad7a426a421131b5fe6f7a892a29be",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "RegexpReplaceStrFunctionFactoryTest",
+  "test_method": "testStackOverFlowError",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 4335,
+  "post_chars": 4326
+}

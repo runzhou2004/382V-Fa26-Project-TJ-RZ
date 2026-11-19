@@ -1,0 +1,18 @@
+{
+  "pair_id": "dromara__hutool__pr1883__StrJoinerTest.joinMultiArrayTest",
+  "project": "https://github.com/dromara/hutool",
+  "category": "OD",
+  "pr_link": "https://github.com/dromara/hutool/pull/1883",
+  "pre_sha": "a81306ef5cc8e881a75b788fe221da411c888ba0",
+  "post_sha": "03d40cf4ff9a2852443597f11bd3c0a2bd3b4598",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "StrJoinerTest",
+  "test_method": "joinMultiArrayTest",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 235,
+  "post_chars": 298
+}

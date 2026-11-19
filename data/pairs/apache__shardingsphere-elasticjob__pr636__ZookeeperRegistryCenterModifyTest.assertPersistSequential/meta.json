@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__shardingsphere-elasticjob__pr636__ZookeeperRegistryCenterModifyTest.assertPersistSequential",
+  "project": "https://github.com/apache/shardingsphere-elasticjob",
+  "category": "NIO",
+  "pr_link": "https://github.com/apache/shardingsphere-elasticjob/pull/636",
+  "pre_sha": "b022898ef1b8c984e17efb2a422ee45f6b13e46e",
+  "post_sha": "d8340f8c04d4d2391179a98a043408f60f66cd7c",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ZookeeperRegistryCenterModifyTest",
+  "test_method": "assertPersistSequential",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 924,
+  "post_chars": 1026
+}

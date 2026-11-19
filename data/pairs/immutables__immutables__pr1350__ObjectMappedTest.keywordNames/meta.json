@@ -1,0 +1,18 @@
+{
+  "pair_id": "immutables__immutables__pr1350__ObjectMappedTest.keywordNames",
+  "project": "https://github.com/immutables/immutables",
+  "category": "ID",
+  "pr_link": "https://github.com/immutables/immutables/pull/1350",
+  "pre_sha": "b21e6bbfbb9038100532416c81e8270951c3e03a",
+  "post_sha": "0865afd44bbb3e0a9d2a7fd0c712e171c153f1f3",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ObjectMappedTest",
+  "test_method": "keywordNames",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 249,
+  "post_chars": 353
+}

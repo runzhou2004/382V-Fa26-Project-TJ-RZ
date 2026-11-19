@@ -1,0 +1,18 @@
+{
+  "pair_id": "hexagonframework__spring-data-ebean__pr8__UserRepositoryIntegrationTest.deleteById",
+  "project": "https://github.com/hexagonframework/spring-data-ebean",
+  "category": "OD-Brit",
+  "pr_link": "https://github.com/hexagonframework/spring-data-ebean/pull/8",
+  "pre_sha": "dd11b97654982403b50dd1d5369cadad71fce410",
+  "post_sha": "ec1dc051cb85b8e62ff0224f800660c44235c65f",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "UserRepositoryIntegrationTest",
+  "test_method": "deleteById",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 387,
+  "post_chars": 448
+}

@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__pinot__pr12029__ServerRoutingStatsManagerTest.testQuerySubmitAndCompletionStats",
+  "project": "https://github.com/apache/pinot",
+  "category": "ID",
+  "pr_link": "https://github.com/apache/pinot/pull/12029",
+  "pre_sha": "32db50016011bc64b9548438e9d1df0e266e27a0",
+  "post_sha": "a68a80cb222004c5e7b4990763ba185e96af0fc7",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ServerRoutingStatsManagerTest",
+  "test_method": "testQuerySubmitAndCompletionStats",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 8305,
+  "post_chars": 9732
+}

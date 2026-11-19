@@ -1,0 +1,18 @@
+{
+  "pair_id": "eBay__mTracker__pr3__FileUtilsTest.testWrite",
+  "project": "https://github.com/eBay/mTracker",
+  "category": "NIO",
+  "pr_link": "https://github.com/eBay/mTracker/pull/3",
+  "pre_sha": "dbead631bb0e8cacbb4448fef7aa2fe3aefc034b",
+  "post_sha": "2430b1bf3255ca7b26314a406649de5f92e038bf",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "FileUtilsTest",
+  "test_method": "testWrite",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 235,
+  "post_chars": 252
+}

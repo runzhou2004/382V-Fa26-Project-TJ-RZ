@@ -1,0 +1,18 @@
+{
+  "pair_id": "alibaba__fastjson2__pr2034__Issue1363.test_for_issue_1",
+  "project": "https://github.com/alibaba/fastjson2",
+  "category": "ID",
+  "pr_link": "https://github.com/alibaba/fastjson2/pull/2034",
+  "pre_sha": "f6eb7db5fe2b3f5e2a3f965bf0b8abc6b75fec0b",
+  "post_sha": "3546212d3dfee8a56ff050c7cf191ac05370805d",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "Issue1363",
+  "test_method": "test_for_issue_1",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 602,
+  "post_chars": 619
+}

@@ -1,0 +1,18 @@
+{
+  "pair_id": "jolokia__jolokia__pr907__SimplifiersTest.fileSimplifier",
+  "project": "https://github.com/jolokia/jolokia",
+  "category": "ID",
+  "pr_link": "https://github.com/jolokia/jolokia/pull/907",
+  "pre_sha": "73b830d2c38899ed33e95b487e9a291a80fb9f5f",
+  "post_sha": "48ffa57150a3eb72fe043c2e16f2122617e6cf48",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "SimplifiersTest",
+  "test_method": "fileSimplifier",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 325,
+  "post_chars": 301
+}

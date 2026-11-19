@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__dubbo__pr6953__ExtensionLoaderTest.test_replaceExtension_Adaptive",
+  "project": "https://github.com/apache/dubbo",
+  "category": "NIO",
+  "pr_link": "https://github.com/apache/dubbo/pull/6953",
+  "pre_sha": "a2a14dcb4e7913dcc37b5a71a69980e1b1a5e106",
+  "post_sha": "8a8c85150738591382ec37919db3f84b64e4404e",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ExtensionLoaderTest",
+  "test_method": "test_replaceExtension_Adaptive",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 469,
+  "post_chars": 530
+}

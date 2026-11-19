@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__dubbo__pr14896__TaskQueueTest.testOffer3",
+  "project": "https://github.com/apache/dubbo",
+  "category": "OD",
+  "pr_link": "https://github.com/apache/dubbo/pull/14896",
+  "pre_sha": "a4a4312ac4717371a088b08f433a5d8b8e0f1ef4",
+  "post_sha": "a605ec7b73ce87f481c462d8e8c3dd81da236260",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "TaskQueueTest",
+  "test_method": "testOffer3",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 493,
+  "post_chars": 312
+}

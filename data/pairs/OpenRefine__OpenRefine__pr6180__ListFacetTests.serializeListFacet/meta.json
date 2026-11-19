@@ -1,0 +1,18 @@
+{
+  "pair_id": "OpenRefine__OpenRefine__pr6180__ListFacetTests.serializeListFacet",
+  "project": "https://github.com/OpenRefine/OpenRefine",
+  "category": "ID",
+  "pr_link": "https://github.com/OpenRefine/OpenRefine/pull/6180",
+  "pre_sha": "6afbd94843a5ce54fe40f565927235f2dc9b1605",
+  "post_sha": "39699dde985440bada906bedb9f9ce87478ceb48",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ListFacetTests",
+  "test_method": "serializeListFacet",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 551,
+  "post_chars": 934
+}

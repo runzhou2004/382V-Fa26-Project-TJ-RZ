@@ -1,0 +1,18 @@
+{
+  "pair_id": "pholser__junit-quickcheck__pr286__UsualJUnitMachineryOnSubclassPropertyTest.expectedOrderingOfMethods",
+  "project": "https://github.com/pholser/junit-quickcheck",
+  "category": "NIO",
+  "pr_link": "https://github.com/pholser/junit-quickcheck/pull/286",
+  "pre_sha": "52d9930485024738efd9e3bfa3b930b2c3b173ad",
+  "post_sha": "74515969755ac0d1580a890e23a205e9db6bb249",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "UsualJUnitMachineryOnSubclassPropertyTest",
+  "test_method": "expectedOrderingOfMethods",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 259,
+  "post_chars": 302
+}

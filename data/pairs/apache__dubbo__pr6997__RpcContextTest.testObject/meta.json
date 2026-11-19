@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__dubbo__pr6997__RpcContextTest.testObject",
+  "project": "https://github.com/apache/dubbo",
+  "category": "NIO",
+  "pr_link": "https://github.com/apache/dubbo/pull/6997",
+  "pre_sha": "3fc2d100bb2081c3da1996508e1f1200cea21d2f",
+  "post_sha": "6d5ce0a7fba4a9f3528c7ea7cb4e999349270b21",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "RpcContextTest",
+  "test_method": "testObject",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 908,
+  "post_chars": 944
+}

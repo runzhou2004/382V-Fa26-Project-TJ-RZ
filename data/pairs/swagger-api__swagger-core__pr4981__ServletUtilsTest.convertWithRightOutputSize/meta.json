@@ -1,0 +1,18 @@
+{
+  "pair_id": "swagger-api__swagger-core__pr4981__ServletUtilsTest.convertWithRightOutputSize",
+  "project": "https://github.com/swagger-api/swagger-core",
+  "category": "ID",
+  "pr_link": "https://github.com/swagger-api/swagger-core/pull/4981",
+  "pre_sha": "2590df67fe911eabb001f730eb79c0dd31586492",
+  "post_sha": "edfb40f47965c2dc0485b471445ec89a7e72199d",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ServletUtilsTest",
+  "test_method": "convertWithRightOutputSize",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 679,
+  "post_chars": 718
+}

@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__incubator-ratis__pr321__TestRetryCacheMetrics.testRetryCacheEntryCount",
+  "project": "https://github.com/apache/incubator-ratis",
+  "category": "OD",
+  "pr_link": "https://github.com/apache/incubator-ratis/pull/321",
+  "pre_sha": "04ff37ef6fdef100cb7a424ba9f7b438aec2c9ba",
+  "post_sha": "e9e47f2bfe23b11eee80ba057a93dd335a97b8db",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "TestRetryCacheMetrics",
+  "test_method": "testRetryCacheEntryCount",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 398,
+  "post_chars": 345
+}

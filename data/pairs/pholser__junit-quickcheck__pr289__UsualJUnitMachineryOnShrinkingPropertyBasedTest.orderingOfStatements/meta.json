@@ -1,0 +1,18 @@
+{
+  "pair_id": "pholser__junit-quickcheck__pr289__UsualJUnitMachineryOnShrinkingPropertyBasedTest.orderingOfStatements",
+  "project": "https://github.com/pholser/junit-quickcheck",
+  "category": "NIO",
+  "pr_link": "https://github.com/pholser/junit-quickcheck/pull/289",
+  "pre_sha": "52d9930485024738efd9e3bfa3b930b2c3b173ad",
+  "post_sha": "08a826bdde92c9cca74e4efaffb7c689fae1147d",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "UsualJUnitMachineryOnShrinkingPropertyBasedTest",
+  "test_method": "orderingOfStatements",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 196,
+  "post_chars": 236
+}

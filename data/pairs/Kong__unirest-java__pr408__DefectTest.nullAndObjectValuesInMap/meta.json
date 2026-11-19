@@ -1,0 +1,18 @@
+{
+  "pair_id": "Kong__unirest-java__pr408__DefectTest.nullAndObjectValuesInMap",
+  "project": "https://github.com/Kong/unirest-java",
+  "category": "ID",
+  "pr_link": "https://github.com/Kong/unirest-java/pull/408",
+  "pre_sha": "08100b1efec7e662599cea34355d90eb78b1b8eb",
+  "post_sha": "c896beb71210f21476288aab49a33b56209f3597",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "DefectTest",
+  "test_method": "nullAndObjectValuesInMap",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 477,
+  "post_chars": 483
+}

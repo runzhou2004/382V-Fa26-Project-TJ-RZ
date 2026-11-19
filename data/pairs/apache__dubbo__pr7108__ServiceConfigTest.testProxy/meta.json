@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__dubbo__pr7108__ServiceConfigTest.testProxy",
+  "project": "https://github.com/apache/dubbo",
+  "category": "NIO",
+  "pr_link": "https://github.com/apache/dubbo/pull/7108",
+  "pre_sha": "594a68fd718fb101ef489bf4999a0536d61f08c8",
+  "post_sha": "92af8b38474b40148c5ec68f109b7c5d4ee2cfaf",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ServiceConfigTest",
+  "test_method": "testProxy",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 254,
+  "post_chars": 290
+}

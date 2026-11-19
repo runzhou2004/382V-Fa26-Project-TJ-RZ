@@ -1,0 +1,18 @@
+{
+  "pair_id": "arquillian__arquillian-core__pr764__ArquillianResourceTestEnricherTestCase.shouldBeAbleToInjectBaseContextOnMethodWithQualifier",
+  "project": "https://github.com/arquillian/arquillian-core",
+  "category": "ID",
+  "pr_link": "https://github.com/arquillian/arquillian-core/pull/764",
+  "pre_sha": "ccc035caf3344f8776913d53c930583e8a8a8830",
+  "post_sha": "b5bd8d77a2abf810c6310033c9aa573d189f6722",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ArquillianResourceTestEnricherTestCase",
+  "test_method": "shouldBeAbleToInjectBaseContextOnMethodWithQualifier",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 766,
+  "post_chars": 1031
+}

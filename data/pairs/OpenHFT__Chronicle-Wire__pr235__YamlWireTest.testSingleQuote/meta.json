@@ -1,0 +1,18 @@
+{
+  "pair_id": "OpenHFT__Chronicle-Wire__pr235__YamlWireTest.testSingleQuote",
+  "project": "https://github.com/OpenHFT/Chronicle-Wire",
+  "category": "OD-Brit",
+  "pr_link": "https://github.com/OpenHFT/Chronicle-Wire/pull/235",
+  "pre_sha": "27a9efc3ced000f46e0f46263614e08896058290",
+  "post_sha": "e7d111c293855224cfc0f73733242d425e8ba9e9",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "YamlWireTest",
+  "test_method": "testSingleQuote",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 237,
+  "post_chars": 300
+}

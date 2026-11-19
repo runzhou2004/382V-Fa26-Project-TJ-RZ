@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__servicecomb-java-chassis__pr3497__ServiceCenterClientTest.TestSendHeartBeats",
+  "project": "https://github.com/apache/servicecomb-java-chassis",
+  "category": "ID",
+  "pr_link": "https://github.com/apache/servicecomb-java-chassis/pull/3497",
+  "pre_sha": "8a7f6b241cb86fb6fa61f43c72379b3021b601c8",
+  "post_sha": "0eebf529ce50b443e5023c55b1a24b90d1873cec",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ServiceCenterClientTest",
+  "test_method": "TestSendHeartBeats",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 988,
+  "post_chars": 1013
+}

@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__seatunnel__pr5894__OptionUtilTest.test",
+  "project": "https://github.com/apache/seatunnel",
+  "category": "ID",
+  "pr_link": "https://github.com/apache/seatunnel/pull/5894",
+  "pre_sha": "8d9a0b7d110e8412277a449fcc7eda4fab3b7b1e",
+  "post_sha": "573de57329fa272fe2b3e4f417ac1243d2807cd2",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "OptionUtilTest",
+  "test_method": "test",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 1974,
+  "post_chars": 2035
+}

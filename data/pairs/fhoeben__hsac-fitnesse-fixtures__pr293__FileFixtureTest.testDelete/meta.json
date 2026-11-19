@@ -1,0 +1,18 @@
+{
+  "pair_id": "fhoeben__hsac-fitnesse-fixtures__pr293__FileFixtureTest.testDelete",
+  "project": "https://github.com/fhoeben/hsac-fitnesse-fixtures",
+  "category": "OD-Brit",
+  "pr_link": "https://github.com/fhoeben/hsac-fitnesse-fixtures/pull/293",
+  "pre_sha": "63048d67f5e07bcddeacb1359546eb739de41190",
+  "post_sha": "1212e0bdeb8f50f02100b0ca9700ed5d309b80bf",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "FileFixtureTest",
+  "test_method": "testDelete",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 269,
+  "post_chars": 311
+}

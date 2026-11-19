@@ -1,0 +1,18 @@
+{
+  "pair_id": "Wikidata__Wikidata-Toolkit__pr484__MwDumpFileProcessingTest.testMwRecentCurrentDumpFileProcessing",
+  "project": "https://github.com/wikidata/wikidata-toolkit",
+  "category": "OD-Brit",
+  "pr_link": "https://github.com/Wikidata/Wikidata-Toolkit/pull/484",
+  "pre_sha": "10f971105701e49dea8b470b3df966f64d68d370",
+  "post_sha": "91e149d703a5889ff81e822452ac1772f9002343",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "MwDumpFileProcessingTest",
+  "test_method": "testMwRecentCurrentDumpFileProcessing",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 983,
+  "post_chars": 989
+}

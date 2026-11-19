@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__dubbo__pr14900__DubboAppenderTest.testAvailable",
+  "project": "https://github.com/apache/dubbo",
+  "category": "UD",
+  "pr_link": "https://github.com/apache/dubbo/pull/14900",
+  "pre_sha": "a4a4312ac4717371a088b08f433a5d8b8e0f1ef4",
+  "post_sha": "188dd46191ac25c7b1ef2a0ece92938082b0f9f8",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "DubboAppenderTest",
+  "test_method": "testAvailable",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 264,
+  "post_chars": 274
+}

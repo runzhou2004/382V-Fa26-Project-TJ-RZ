@@ -1,0 +1,18 @@
+{
+  "pair_id": "everit-org__json-schema__pr516__ObjectSchemaTest.toStringTest",
+  "project": "https://github.com/everit-org/json-schema",
+  "category": "ID",
+  "pr_link": "https://github.com/everit-org/json-schema/pull/516",
+  "pre_sha": "43fda7d4fae927f88b9326ffee88fcc21c95c23e",
+  "post_sha": "4ec97175d24d46c9be66f84733efcf4200ae7595",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ObjectSchemaTest",
+  "test_method": "toStringTest",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 269,
+  "post_chars": 272
+}

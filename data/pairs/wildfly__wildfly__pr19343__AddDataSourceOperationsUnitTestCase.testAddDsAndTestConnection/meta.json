@@ -1,0 +1,18 @@
+{
+  "pair_id": "wildfly__wildfly__pr19343__AddDataSourceOperationsUnitTestCase.testAddDsAndTestConnection",
+  "project": "https://github.com/wildfly/wildfly",
+  "category": "NIO",
+  "pr_link": "https://github.com/wildfly/wildfly/pull/19343",
+  "pre_sha": "9e16a2cf120bcbaee83f3b735082aaa96a528665",
+  "post_sha": "38a366e24a45ab802de72ba44b29cfe4bddd41f5",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "AddDataSourceOperationsUnitTestCase",
+  "test_method": "testAddDsAndTestConnection",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 1141,
+  "post_chars": 1226
+}

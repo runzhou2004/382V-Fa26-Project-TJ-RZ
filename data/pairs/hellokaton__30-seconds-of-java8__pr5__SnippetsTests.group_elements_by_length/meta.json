@@ -1,0 +1,18 @@
+{
+  "pair_id": "hellokaton__30-seconds-of-java8__pr5__SnippetsTests.group_elements_by_length",
+  "project": "https://github.com/hellokaton/30-seconds-of-java8",
+  "category": "ID",
+  "pr_link": "https://github.com/hellokaton/30-seconds-of-java8/pull/5",
+  "pre_sha": "1af5d4dee567f00e662cb9b74abc16067312e338",
+  "post_sha": "fc1a6846ea17f026755061f520c18d62a0de61c1",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "SnippetsTests",
+  "test_method": "group_elements_by_length",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 428,
+  "post_chars": 425
+}

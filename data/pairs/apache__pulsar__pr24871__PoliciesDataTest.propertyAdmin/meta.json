@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__pulsar__pr24871__PoliciesDataTest.propertyAdmin",
+  "project": "https://github.com/apache/pulsar",
+  "category": "ID",
+  "pr_link": "https://github.com/apache/pulsar/pull/24871",
+  "pre_sha": "678db6b34587b0042235f0d31e4c406bb0263bcd",
+  "post_sha": "6d6d9953592c6bd392f9d5b6465958c1e55ee23f",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "PoliciesDataTest",
+  "test_method": "propertyAdmin",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 798,
+  "post_chars": 802
+}

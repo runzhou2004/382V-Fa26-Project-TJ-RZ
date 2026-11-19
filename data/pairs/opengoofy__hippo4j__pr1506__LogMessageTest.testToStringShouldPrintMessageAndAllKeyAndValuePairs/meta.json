@@ -1,0 +1,18 @@
+{
+  "pair_id": "opengoofy__hippo4j__pr1506__LogMessageTest.testToStringShouldPrintMessageAndAllKeyAndValuePairs",
+  "project": "https://github.com/opengoofy/hippo4j",
+  "category": "NOD",
+  "pr_link": "https://github.com/opengoofy/hippo4j/pull/1506",
+  "pre_sha": "fec58a5ecaca0f749abcdf076f13d6f0ba6267b2",
+  "post_sha": "da339ac07a58d899603d96204d87aa8936ed8802",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "LogMessageTest",
+  "test_method": "testToStringShouldPrintMessageAndAllKeyAndValuePairs",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 286,
+  "post_chars": 375
+}

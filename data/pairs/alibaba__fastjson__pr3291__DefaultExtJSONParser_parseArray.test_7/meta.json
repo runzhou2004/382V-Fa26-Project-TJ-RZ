@@ -1,0 +1,18 @@
+{
+  "pair_id": "alibaba__fastjson__pr3291__DefaultExtJSONParser_parseArray.test_7",
+  "project": "https://github.com/alibaba/fastjson",
+  "category": "OD",
+  "pr_link": "https://github.com/alibaba/fastjson/pull/3291",
+  "pre_sha": "3561431017a11b58399f9185082eb1a20017a74f",
+  "post_sha": "65f65e1443484b91d427253e79ed305ca79d6d57",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "DefaultExtJSONParser_parseArray",
+  "test_method": "test_7",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 646,
+  "post_chars": 716
+}

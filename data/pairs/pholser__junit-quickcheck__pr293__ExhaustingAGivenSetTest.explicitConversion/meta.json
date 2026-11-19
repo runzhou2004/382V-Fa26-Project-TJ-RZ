@@ -1,0 +1,18 @@
+{
+  "pair_id": "pholser__junit-quickcheck__pr293__ExhaustingAGivenSetTest.explicitConversion",
+  "project": "https://github.com/pholser/junit-quickcheck",
+  "category": "NIO",
+  "pr_link": "https://github.com/pholser/junit-quickcheck/pull/293",
+  "pre_sha": "30e31cb2a6ac2d4abb27c00c6537422453c6e8f8",
+  "post_sha": "cc11ea91a03b03bf31821927e616513f68167eed",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ExhaustingAGivenSetTest",
+  "test_method": "explicitConversion",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 376,
+  "post_chars": 465
+}

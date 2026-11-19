@@ -1,0 +1,18 @@
+{
+  "pair_id": "aws__aws-dynamodb-encryption-java__pr274__AttributeValueMarshallerTest.testSimpleMapWithNull",
+  "project": "https://github.com/aws/aws-dynamodb-encryption-java",
+  "category": "ID",
+  "pr_link": "https://github.com/aws/aws-dynamodb-encryption-java/pull/274",
+  "pre_sha": "3037b5f6d0ea2b1977e1e361c5bc1d521edc2a01",
+  "post_sha": "ef7283b957dd528a32b3cb1986f93ae6bfe5cdd3",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "AttributeValueMarshallerTest",
+  "test_method": "testSimpleMapWithNull",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 629,
+  "post_chars": 903
+}

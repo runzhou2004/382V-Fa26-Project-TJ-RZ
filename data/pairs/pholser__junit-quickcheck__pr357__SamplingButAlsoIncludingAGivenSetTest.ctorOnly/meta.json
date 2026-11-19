@@ -1,0 +1,18 @@
+{
+  "pair_id": "pholser__junit-quickcheck__pr357__SamplingButAlsoIncludingAGivenSetTest.ctorOnly",
+  "project": "https://github.com/pholser/junit-quickcheck",
+  "category": "NIO",
+  "pr_link": "https://github.com/pholser/junit-quickcheck/pull/357",
+  "pre_sha": "e558d5487af12e62d4b3528c33e4cbdf6597fc14",
+  "post_sha": "7301845145f8870ee03133a3b23265c9c5305b38",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "SamplingButAlsoIncludingAGivenSetTest",
+  "test_method": "ctorOnly",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 378,
+  "post_chars": 411
+}

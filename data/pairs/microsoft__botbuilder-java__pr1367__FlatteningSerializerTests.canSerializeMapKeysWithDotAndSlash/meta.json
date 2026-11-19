@@ -1,0 +1,18 @@
+{
+  "pair_id": "microsoft__botbuilder-java__pr1367__FlatteningSerializerTests.canSerializeMapKeysWithDotAndSlash",
+  "project": "https://github.com/microsoft/botbuilder-java",
+  "category": "ID",
+  "pr_link": "https://github.com/microsoft/botbuilder-java/pull/1367",
+  "pre_sha": "eb84c9e1942369cc3e5c663150cb166dd7ce2252",
+  "post_sha": "59d6c1ea38b9bdc6a712ce2dfdc1c55e94743671",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "FlatteningSerializerTests",
+  "test_method": "canSerializeMapKeysWithDotAndSlash",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 355,
+  "post_chars": 397
+}

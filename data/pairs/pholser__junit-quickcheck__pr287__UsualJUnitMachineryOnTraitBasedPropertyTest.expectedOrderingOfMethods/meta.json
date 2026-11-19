@@ -1,0 +1,18 @@
+{
+  "pair_id": "pholser__junit-quickcheck__pr287__UsualJUnitMachineryOnTraitBasedPropertyTest.expectedOrderingOfMethods",
+  "project": "https://github.com/pholser/junit-quickcheck",
+  "category": "NIO",
+  "pr_link": "https://github.com/pholser/junit-quickcheck/pull/287",
+  "pre_sha": "52d9930485024738efd9e3bfa3b930b2c3b173ad",
+  "post_sha": "73a6d68130f8270270b7f4401aa62af2548b366c",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "UsualJUnitMachineryOnTraitBasedPropertyTest",
+  "test_method": "expectedOrderingOfMethods",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 256,
+  "post_chars": 299
+}

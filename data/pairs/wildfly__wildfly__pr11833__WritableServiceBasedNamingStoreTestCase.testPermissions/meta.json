@@ -1,0 +1,18 @@
+{
+  "pair_id": "wildfly__wildfly__pr11833__WritableServiceBasedNamingStoreTestCase.testPermissions",
+  "project": "https://github.com/wildfly/wildfly",
+  "category": "OD-Brit",
+  "pr_link": "https://github.com/wildfly/wildfly/pull/11833",
+  "pre_sha": "3012936f2d05c29c355f580f216fac8094cd06ff",
+  "post_sha": "9694ae13a9164dc3e20681d8272c999e09043da4",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "WritableServiceBasedNamingStoreTestCase",
+  "test_method": "testPermissions",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 4347,
+  "post_chars": 4418
+}

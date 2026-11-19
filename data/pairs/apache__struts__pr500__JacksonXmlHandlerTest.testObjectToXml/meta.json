@@ -1,0 +1,18 @@
+{
+  "pair_id": "apache__struts__pr500__JacksonXmlHandlerTest.testObjectToXml",
+  "project": "https://github.com/Apache/Struts",
+  "category": "ID",
+  "pr_link": "https://github.com/apache/struts/pull/500",
+  "pre_sha": "fe3b78e7f155f547384bdf3bf8744d6785517618",
+  "post_sha": "565bc8a98b9bc9c3c15d40e78c6d904476adcbb9",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "JacksonXmlHandlerTest",
+  "test_method": "testObjectToXml",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 424,
+  "post_chars": 667
+}

@@ -1,0 +1,18 @@
+{
+  "pair_id": "Wikidata__Wikidata-Toolkit__pr480__MwDumpFileProcessingTest.testMwDailyDumpFileProcessing",
+  "project": "https://github.com/wikidata/wikidata-toolkit",
+  "category": "OD-Brit",
+  "pr_link": "https://github.com/Wikidata/Wikidata-Toolkit/pull/480",
+  "pre_sha": "6ee1648d14f9529e49ea4ed628fab7297164bd85",
+  "post_sha": "1ae66363d8cd9eeb9d093bcb637e12253f9ab2f4",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "MwDumpFileProcessingTest",
+  "test_method": "testMwDailyDumpFileProcessing",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 3943,
+  "post_chars": 3949
+}

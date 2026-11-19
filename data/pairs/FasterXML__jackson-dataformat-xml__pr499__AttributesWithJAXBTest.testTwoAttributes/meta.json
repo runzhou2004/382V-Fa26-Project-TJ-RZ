@@ -1,0 +1,18 @@
+{
+  "pair_id": "FasterXML__jackson-dataformat-xml__pr499__AttributesWithJAXBTest.testTwoAttributes",
+  "project": "https://github.com/FasterXML/jackson-dataformat-xml",
+  "category": "OD",
+  "pr_link": "https://github.com/FasterXML/jackson-dataformat-xml/pull/499",
+  "pre_sha": "2d08f8d0b0248a00c2c79b9a07e936b3287edb07",
+  "post_sha": "2821506d6e97984dbca8399a039f7878bbdfeae5",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "AttributesWithJAXBTest",
+  "test_method": "testTwoAttributes",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 359,
+  "post_chars": 424
+}

@@ -1,0 +1,18 @@
+{
+  "pair_id": "alibaba__fastjson2__pr3159__DateTypeTest.test",
+  "project": "https://github.com/alibaba/fastjson2",
+  "category": "TZD",
+  "pr_link": "https://github.com/alibaba/fastjson2/pull/3159",
+  "pre_sha": "2da286c2a998035793fa4410e3e32a2c6b19edad",
+  "post_sha": "3701bf729907915aebe38b4b69d1140bdaeef7ec",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "DateTypeTest",
+  "test_method": "test",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 1302,
+  "post_chars": 1370
+}

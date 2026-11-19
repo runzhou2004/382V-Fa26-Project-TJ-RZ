@@ -1,0 +1,18 @@
+{
+  "pair_id": "networknt__light-4j__pr857__ConsulRegistryTest.discoverService",
+  "project": "https://github.com/networknt/light-4j",
+  "category": "OD",
+  "pr_link": "https://github.com/networknt/light-4j/pull/857",
+  "pre_sha": "fcded1683dcbd41a968e221494778aa6b71e7428",
+  "post_sha": "e4c6b9d7ef205e6ed1ced90e8532a9c5910cadf1",
+  "post_source": "pr_head",
+  "file_status": "modified",
+  "test_class": "ConsulRegistryTest",
+  "test_method": "discoverService",
+  "usable": true,
+  "reason": "ok",
+  "n_pre_matches": 1,
+  "n_post_matches": 1,
+  "pre_chars": 380,
+  "post_chars": 540
+}
