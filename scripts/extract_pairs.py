@@ -53,10 +53,10 @@ try:
                     rec["usable"], rec["reason"] = True, "ok"
                     d = ROOT / "data" / "pairs" / pair_id
                     d.mkdir(parents=True, exist_ok=True)
-                    (d / "pre.java").write_text(pre_m[0])
-                    (d / "post.java").write_text(post_m[0])
+                    (d / "pre.java").write_text(pre_m[0], encoding="utf-8")
+                    (d / "post.java").write_text(post_m[0], encoding="utf-8")
                     rec["pre_chars"], rec["post_chars"] = len(pre_m[0]), len(post_m[0])
-                    (d / "meta.json").write_text(json.dumps(rec, indent=2, default=str))
+                    (d / "meta.json").write_text(json.dumps(rec, indent=2, default=str), encoding="utf-8")
         index.append(rec)
         if len(index) % 25 == 0:
             print(f"  {len(index)}/{len(df)} rows", file=sys.stderr)

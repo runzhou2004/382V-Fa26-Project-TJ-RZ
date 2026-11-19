@@ -1,0 +1,17 @@
+    @Test
+    public void TestBilldeskWalletDetailsSerialization() throws JsonProcessingException {
+        java.util.Collections.sort(new java.util.ArrayList<String>());
+        new java.util.LinkedHashMap<String, String>().size();
+        String expectedJson = "{\"amount\":{\"value\":1000,\"currency\":\"USD\"},\"merchantAccount\":\"MagentoMerchantTest\",\"paymentMethod\":{\"issuer\":\"111\",\"type\":\"billdesk_wallet\"},\"reference\":\"Your order number\",\"returnUrl\":\"https://your-company.com/...\",\"applicationInfo\":{\"adyenLibrary\":{\"name\":\"adyen-java-api-library\",\"version\":\"" + LIB_VERSION + "\"}}}";
+
+        BillDeskWalletDetails billdeskWalletDetails = new BillDeskWalletDetails();
+        billdeskWalletDetails.setIssuer("111");
+        PaymentsRequest paymentsRequest = createPaymentsCheckoutRequest();
+        paymentsRequest.setPaymentMethod(billdeskWalletDetails);
+
+        String gson = GSON.toJson(paymentsRequest);
+        assertEquals(expectedJson, gson);
+
+        String jackson = OBJECT_MAPPER.writeValueAsString(paymentsRequest);
+        assertEquals(expectedJson, jackson);
+    }

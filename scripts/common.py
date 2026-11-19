@@ -23,7 +23,7 @@ def gh_api(endpoint, raw=False, paginate=False):
     key = hashlib.sha1(f"{endpoint}|{raw}|{paginate}".encode()).hexdigest()
     f = CACHE / f"{key}.json"
     if f.exists():
-        d = json.loads(f.read_text())
+        d = json.loads(f.read_text(encoding="utf-8"))
         return d["value"]
  
     cmd = ["gh", "api", endpoint]
@@ -37,7 +37,7 @@ def gh_api(endpoint, raw=False, paginate=False):
         if "rate limit" in err or "secondary" in err:
             raise RateLimited(p.stderr.strip())
         # 404 (deleted repo / file) and similar: cache as a miss
-        f.write_text(json.dumps({"value": None, "error": p.stderr.strip()[:300]}))
+        f.write_text(json.dumps({"value": None, "error": p.stderr.strip()[:300]}), encoding="utf-8")
         return None
  
     if raw:
@@ -46,7 +46,7 @@ def gh_api(endpoint, raw=False, paginate=False):
         value = json.loads(p.stdout)
         if paginate:  # --slurp gives a list of pages; flatten list-of-lists
             value = [x for page in value for x in (page if isinstance(page, list) else [page])]
-    f.write_text(json.dumps({"value": value}))
+    f.write_text(json.dumps({"value": value}), encoding="utf-8")
     return value
  
  
