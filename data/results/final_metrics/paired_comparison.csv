@@ -1,0 +1,3 @@
+comparison,matched_tests,independent_projects,project_equal_effect,test_weighted_effect_descriptive,cluster_bootstrap_95ci_low,cluster_bootstrap_95ci_high,one_sample_t_p_project_means,interpretation,one_sample_t_p_holm
+confidence_change,122,34,0.1412150880770801,0.1787688803253361,0.0833183548615584,0.19779158044655643,3.717146859549549e-05,real minus fake change in original-class confidence; positive means fake edits lowered it more,7.434293719099098e-05
+top1_change_rate,122,34,0.18833778966131906,0.2295081967213115,0.08298908199643493,0.2909313725490196,0.0014169811446376702,fake flip rate minus real top-1 change; positive means fake edits changed labels more,0.0014169811446376702

@@ -1,0 +1,14 @@
+{
+  "completed_at_utc": "2026-11-20T00:17:34.018046+00:00",
+  "input_dataset": "data/pairs/*/{pre,post}.java",
+  "source_pairs_refreshed": false,
+  "real_fix_pairs": 131,
+  "fake_fix_variants_scored": 1290,
+  "fake_score_batches": 14,
+  "batch_tests": 10,
+  "device": "auto",
+  "model_source": "/app/src",
+  "model_data": "/app/src/FlakyLens_Categorization_PerProject-Data",
+  "models_dir": "/app/models",
+  "weights_pattern": "per_project_model_weights_on__dataset_project_group_{k}.pt"
+}

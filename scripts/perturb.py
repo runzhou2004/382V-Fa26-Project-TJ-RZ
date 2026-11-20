@@ -964,7 +964,7 @@ def main(argv=None):
                 if r.code is not None:
                     p = java_dir / d.name / f"{base}__{r.name}.java"
                     p.parent.mkdir(parents=True, exist_ok=True)
-                    p.write_text(r.code, encoding="utf-8", newline="")
+                    p.write_text(r.code, encoding="utf-8")
                     vpath = str(p)
                 m = asdict(r)
                 m.update(variant_id=vid, original_path=str(f), variant_path=vpath)

@@ -1,0 +1,6 @@
+metric,suite,n,value,ci95_low,ci95_high,extra
+fake_fix_flip_rate,fake_fix,1250,0.3,0.2752398165636539,0.32598572899170164,all variants
+fake_fix_mean_delta_target,fake_fix,1250,0.1384995787904598,,,signed; target = the edit's category
+fake_fix_mean_delta_max,fake_fix,1250,-0.03712197817858686,,,
+fake_fix_flip_rate_target_is_predicted,fake_fix,240,0.14583333333333334,0.1067632269727411,0.19606286996888,subset: the edit targets the category predicted for the original
+fake_fix_mean_delta_target_target_is_predicted,fake_fix,240,-0.06940997337223961,,,

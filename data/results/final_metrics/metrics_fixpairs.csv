@@ -1,0 +1,8 @@
+metric,n,value,ci95_low,ci95_high
+fixpairs_pairs_total,131,131.0,,
+fixpairs_excluded_identical_after_truncation,131,2.0,,
+fixpairs_pre_called_flaky,129,123.0,,
+fixpairs_share_pre_class_confidence_dropped,123,0.5691056910569106,0.4808071908005235,0.6532182393422689
+fixpairs_share_flipped_to_nonflaky,123,0.008130081300813009,0.0014365665731900235,0.04461772476340617
+fixpairs_share_top1_changed,123,0.08130081300813008,0.04475838884502016,0.14320518146629724
+fixpairs_mean_delta_pre_class,123,-0.02959347288389274,,
